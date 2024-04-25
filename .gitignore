@@ -2,7 +2,7 @@
 .*.sw*
 
 #package files
-package.json
+package*.json
 
 # node
 babel.config.js
