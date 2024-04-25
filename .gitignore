@@ -3,3 +3,8 @@
 
 #package files
 package.json
+
+# node
+babel.config.js
+.eslintrc.js
+node_modules/*
