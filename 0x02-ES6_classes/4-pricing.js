@@ -1,53 +1,33 @@
-import Currency from './3-currency.js';
+/* eslint-disable */
+import Currency from './3-currency';
 
 export default class Pricing {
   constructor(amount, currency) {
-    if (!(typeof amount === 'number')) {
-      throw new TypeError('Not a Number');
-    }
-    if (!(currency instanceof Currency)) {
-      throw new TypeError('Not a Currency Object');
-    }
-
     this._amount = amount;
     this._currency = currency;
   }
 
-  // amount
   get amount() {
-    return this.amount;
+    return this._amount;
   }
 
-  set amount(arg) {
-    if (!(typeof arg === 'number')) {
-      throw new TypeError('Not a Number');
-    }
-    this._amount = arg;
+  set amount(newAmount) {
+    this._amount = newAmount;
   }
 
-  // currency
   get currency() {
-    return this.currency;
+    return this._currency;
   }
 
-  set currency(arg) {
-    if (!(arg instanceof Currency)) {
-      throw new TypeError('Not a Currency Object');
-    }
-    this._currency = arg;
+  set currency(newCurrency) {
+    this._currency = newCurrency;
   }
 
   displayFullPrice() {
-    // returns the attributes in format amount currency
-    return `${this._amount} ${this._currency.displayFullCurrency()}`;
+    return `${this._amount} ${this._currency.name} (${this._currency.code})`;
   }
 
   static convertPrice(amount, conversionRate) {
-    for (const num of [amount, conversionRate]) {
-      if (!(num instanceof Number)) {
-        throw new TypeError('Not a number');
-      }
-    }
-    return (amount * conversionRate);
+    return amount * conversionRate;
   }
 }
