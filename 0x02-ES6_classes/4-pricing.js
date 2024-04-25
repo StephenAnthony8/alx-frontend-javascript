@@ -19,7 +19,7 @@ export default class Pricing {
   }
 
   set amount(arg) {
-    if (!(arg instanceof Number)) {
+    if (!(typeof arg === 'number')) {
       throw new TypeError('Not a Number');
     }
     this._amount = arg;
