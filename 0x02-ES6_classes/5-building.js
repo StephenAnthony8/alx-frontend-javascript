@@ -7,10 +7,6 @@ export default class Building {
     }
   }
 
-  set sqft(arg) {
-    this._sqft = arg;
-  }
-
   get sqft() {
     return this._sqft;
   }
