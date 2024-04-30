@@ -3,7 +3,11 @@ export default function createInt8TypedArray(length, position, value) {
   const rtnArr = new Int8Array(length);
 
   try {
-    rtnArr[position] = value;
+    if (position < length) {
+      rtnArr[position] = value;
+    } else {
+      throw new Error();
+    }
   } catch (error) {
     throw new Error('Position outside range');
   }
