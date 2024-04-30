@@ -1,5 +1,11 @@
 export default function cleanSet(set, startString) {
-  const newArr = [...set.values()].filter((x) => (startString !== '' ? x.startsWith(startString) : false));
+  let rtnString = '';
 
-  return (newArr.length > 0 ? newArr.reduce((start, next) => `${start}${start === '' ? '' : '-'}${next.substring(startString.length)}`, '') : '');
+  set.forEach((x) => {
+    if (x.startsWith(startString) && startString !== '') {
+      rtnString += (rtnString === '' ? '' : '-') + x.substring(startString.length);
+    }
+  });
+
+  return rtnString;
 }
