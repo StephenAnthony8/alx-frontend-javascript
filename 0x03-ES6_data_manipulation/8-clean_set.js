@@ -1,11 +1,11 @@
 export default function cleanSet(set, startString) {
-  let rtnString = '';
+  const rtnString = [];
 
   set.forEach((x) => {
     if (x.startsWith(startString) && startString !== '') {
-      rtnString += (rtnString === '' ? '' : '-') + x.substring(startString.length);
+      rtnString.push(x.substring(startString.length));
     }
   });
 
-  return rtnString;
+  return rtnString.join('-');
 }
