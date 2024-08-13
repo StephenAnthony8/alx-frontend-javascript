@@ -5,15 +5,6 @@ interface Student {
 	age: number;
 	location: string;
 }
-/* 
-const student1: Student = {
-	firstName: "Grace",
-	lastName: "Letiwa",
-	age: 27,
-	location: "Nairobi"
-};
- */
-
 /* Student array */
 const studentsList: Student[] = [
 	{firstName: "John", lastName: "Doe", age: 27, location: "Nairobi"},
@@ -40,7 +31,7 @@ window.onload = () => {
 		/* append td elements to tr */
 		tabRow.appendChild(rowName);
 		tabRow.appendChild(rowLocation);
-		
+
 		/* append tr elements to table element */
 		studentTable.appendChild(tabRow);
 	});
